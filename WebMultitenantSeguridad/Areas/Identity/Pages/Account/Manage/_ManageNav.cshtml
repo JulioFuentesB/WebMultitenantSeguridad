@@ -1,4 +1,8 @@
-﻿@inject SignInManager<IdentityUser> SignInManager
+﻿@*@inject SignInManager<IdentityUser> SignInManager*@
+@inject SignInManager<ApplicationUser> SignInManager
+
+@using WebMultitenantSeguridad.Models
+@inject UserManager<ApplicationUser> userManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
